@@ -5,7 +5,7 @@ from flask import request,render_template,redirect,url_for
 
 
 
-@app.route('/file',methods=['GET'])
+@app.route('/')
 def get_file():   
     return render_template('file.html')
 
