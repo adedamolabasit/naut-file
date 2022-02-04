@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Document</title>
+    <link rel="stylesheet" href="static/file.css">
+    <link rel="stylesheet" href="static/file.js">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+
+
+</head>
+<body>
+    {% block content %}
+    <div class="wrapper">
+        <img src="static/Nautilus.svg" alt="">   
+          
+   <form action="/download" method="get" enctype="multipart/form-data">    
+        <label>
+          <input type="date" placeholder="dd-mm-yyyy"  required="required" name="date" class="my-5"/>
+          <h4>Enter a date to request for a file</h3>
+        </label>
+        <div>
+            <button type="submit" class="btn btn-primary my-5">Request Download</button>
+        </div>
+   </form>
+   {% endblock %}
+    </div>  
+</body>
+
+</html>
