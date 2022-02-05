@@ -1,8 +1,7 @@
-import mimetypes
-from flaskr import app
-from flask import request,render_template,redirect,url_for
+from flask import request,render_template,redirect,url_for,Flask
 
 
+app=Flask(__name__)
 
 
 @app.route('/')
