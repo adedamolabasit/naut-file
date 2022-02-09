@@ -1,0 +1,5 @@
+https://polkashots.io//assets/js/vendor/jquery.min.js
+https://polkashots.io//assets/js/vendor/bootstrap/affix.min.js
+https://polkashots.io//assets/js/vendor/bootstrap/scrollspy.min.js
+https://polkashots.io//assets/js/vendor/matchHeight.min.js
+https://polkashots.io//assets/js/vendor/scripts.min.js

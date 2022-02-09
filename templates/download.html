@@ -15,5 +15,17 @@
     <h4>
     storage.googleapis.com/composable-binaries/cl-1-{{ month }}-{{ day }}-{{ year }}.zip
     </h4>
+    <h4>
+        
+    https://storage.googleapis.com/composable-binaries/cl-1-{{ dic.day }}.zip
+    
+    </h4>
+    {% for itm in order %}
+    
+    <h4>     
+    https://storage.googleapis.com/composable-binaries/cl-1-{{ itm[8:10] }}-{{ itm[5:7] }}-{{ itm[0:4] }}.zip 
+    </h4>
+    
+    {% endfor %}
 </div>
 {% endblock %}
