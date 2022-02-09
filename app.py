@@ -3,8 +3,10 @@ from datetime import date, timedelta, datetime
 import calendar
 import requests
 from bs4 import BeautifulSoup
+import pytz
 app=Flask(__name__)
 app.config['SECRET_KEY']="naut1234567"
+
 
 def descOrder(lists):
     for r in lists:      
@@ -16,7 +18,9 @@ def descSearch(lists):
     return str1
 
 
-        
+ 
+local_tz = pytz.timezone('Africa/Lagos') 
+local=datetime.now(local_tz)      
 
 @app.route('/search')
 def search():
@@ -30,7 +34,7 @@ def search():
     ordered_day=descSearch(day)
     ordered_year=descSearch(year)
     ordered_month=descSearch(month)
-    now=datetime.now()
+    now=local
     month_name=calendar.month_name[now.month]
     if int(ordered_day) > now.day or int(ordered_month) > now.month or int(ordered_year) > now.year:
        flash('Date can not be greater than present date','danger')
@@ -44,10 +48,10 @@ def search():
 
 @app.route('/')
 def naut_files():
-    month = datetime.now().month
-    year = datetime.now().year
-    current_date=datetime.now().day
-    number_of_days = calendar.monthrange(year, month)[1]
+    month = local.month
+    year = local.year
+    current_date=local.day
+    # number_of_days = calendar.monthrange(year, month)[1]
     first_date = date(year, month, 1)
     last_date = date(year, month, current_date)
     delta = last_date - first_date
@@ -55,11 +59,9 @@ def naut_files():
     list=[]
     list.append(a)
     order=descOrder(list)
-    now=datetime.now()
+    now=local
     month_name=calendar.month_name[now.month]
 
-    
-    
     
     return render_template('pod.html',order=order,now=now,month=month,month_name=month_name)
 
