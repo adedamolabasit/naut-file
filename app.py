@@ -36,9 +36,9 @@ def search():
     ordered_month=descSearch(month)
     now=local
     month_name=calendar.month_name[now.month]
-    if int(ordered_day) > now.day or int(ordered_month) > now.month or int(ordered_year) > now.year:
-       flash('Date can not be greater than present date','danger')
-       return redirect(url_for('naut_files')) 
+    if int(ordered_day) > now.day and int(ordered_month) >= now.month and int(ordered_year) >= now.year:
+        flash('Date can not be greater than present date','danger')
+        return redirect(url_for('naut_files')) 
     return render_template('search.html',day=ordered_day,month=ordered_month,year=ordered_year,month_name=month_name,now=now)
 
 
