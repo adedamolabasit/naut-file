@@ -29,10 +29,6 @@ This section will guide you through the setup process required to get up and run
 ` pip install -r requirements.txt
 
 
-#### Database Setup
-1. Run `flask db migrate`
-2. Run `flask db upgrade'
-
 ### Development
 
 To run the application, use the command: `python app.py`
